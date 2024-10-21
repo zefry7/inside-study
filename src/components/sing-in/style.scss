@@ -1,0 +1,76 @@
+
+.sing-in {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    &__content {
+        padding: 46px;
+        width: 411px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-radius: 30px;
+        background: linear-gradient(173.74deg, #C4E3F4 6.83%, #E4EBEF 97.13%);
+        box-shadow: 0px 4px 20px 0px #70707066;
+        animation: anim-scale 0.5s ease-out;
+    }
+
+    &__title {
+        margin-bottom: 56px;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 48px;
+        color: #FFFFFF;
+    }
+    &__form {
+        margin-bottom: 145px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__input {
+        margin-bottom: 30px;
+        font-size: 24px;
+        line-height: 120%;
+        color: #FFFFFF;
+        border-bottom: 3px solid #FFFFFF;
+        background-color: transparent;
+        
+        &::placeholder {
+            font-size: 24px;
+            color: #FFFFFF;
+        }
+    }
+    &__error {
+        top: 265px;
+        position: absolute;
+        font-size: 18px;
+        line-height: 130%;
+        color: #e94444;
+    }
+    &__button {
+        padding: 16px 103px;
+        border-radius: 50px;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 42px;
+        background: #FFFFFF;
+        color: #C4E3F4;
+        transition: all 0.15s linear;
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}
+
+
+@keyframes anim-scale {
+    0% {
+        transform: scale(0.0001);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
