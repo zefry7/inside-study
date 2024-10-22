@@ -1,0 +1,23 @@
+.welcome {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__img {
+        margin-bottom: 60px;
+        img {
+            transform: scale(1.5);
+        }
+    }
+
+    &__title {
+        font-family: Rubik;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 56px;
+        text-align: center;
+        color: white;
+    }
+}

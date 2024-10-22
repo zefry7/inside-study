@@ -1,0 +1,54 @@
+.dropdown {
+    border: 3px solid #FFFFFF;
+    border-radius: 25px;
+    &_active {
+        padding-bottom: 12px;
+        background-color: #FFFFFF;
+        .dropdown__list {
+            margin-top: 4px;
+            display: flex;
+        }
+
+        .dropdown__button {
+            color: #B4D3E4 !important;
+
+            &::after {
+                top: 16px;
+                background: url(/public/img/triagle-blue.svg) center/ 100% no-repeat;
+            }
+        }
+    }
+
+    &__button {
+        border: none !important;
+        background-color: transparent;
+        align-items: center;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            background: url(/public/img/triagle-white.svg) center/ 100% no-repeat;
+        }
+    }
+    &__list {
+        display: none;
+        flex-direction: column;
+        gap: 11px;
+    }
+
+    &__item {
+        display: block;
+        font-family: Rubik;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+        text-align: center;
+        color: #B4D3E4;
+        font-weight: 400;
+    }
+}
