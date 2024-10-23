@@ -1,6 +1,7 @@
 .dropdown {
     border: 3px solid #FFFFFF;
     border-radius: 25px;
+    width: max-content;
     &_active {
         padding-bottom: 12px;
         background-color: #FFFFFF;
@@ -10,11 +11,11 @@
         }
 
         .dropdown__button {
-            color: #B4D3E4 !important;
+            color: #604784 !important;
 
             &::after {
                 top: 16px;
-                background: url(/public/img/triagle-blue.svg) center/ 100% no-repeat;
+                background: url(/public/img/triangle-purple.svg) center/ 100% no-repeat;
             }
         }
     }
@@ -48,11 +49,11 @@
         line-height: 28px;
         font-weight: 400;
         text-align: center;
-        color: #B4D3E4;
+        color: #604784;
         font-weight: 400;
 
         &:hover {
-            color: #B4D3E4;
+            color: #604784;
         }
     }
 }

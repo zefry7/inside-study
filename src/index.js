@@ -5,6 +5,7 @@ import "./style/style.scss"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Welcome from './components/welcome';
 import MainClass from './app/main-class';
+import Student from './app/student';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "main-class",
         element: <MainClass />
+      },
+      {
+        path: "main-class/:idStudent",
+        element: <Student />
       }
     ]
   },

@@ -1,0 +1,25 @@
+.list-student {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 3px solid #FFFFFF66;
+    padding-top: 16px;
+    &__item {
+        border-bottom: 3px solid #FFFFFF66;
+        padding: 0px 12px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__fio {
+        font-size: 32px;
+        font-weight: 500;
+        color: #FFFFFF;
+    }
+
+    & .button-style {
+        border-radius: 7px;
+        border-width: 2px;
+    }
+}

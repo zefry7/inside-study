@@ -1,0 +1,50 @@
+.list-mark {
+    padding: 15px;
+    border: 3px solid #D2D2D2;
+    border-radius: 20px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #848484;
+
+        span {
+            display: inline-block;
+            height: 24px;
+            width: 24px;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            line-height: 24px;
+        }
+    }
+
+    &__date {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 18px;
+        color: #D2D2D2;
+    }
+
+    &__type-5,
+    &__type-4 {
+        background-color: #B2D078;
+    }
+    &__type-3 {
+        background-color: #F8CA6D;
+    }
+    &__type-2 {
+        background-color: #F57781;
+    }
+}

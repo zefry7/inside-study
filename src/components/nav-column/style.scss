@@ -1,8 +1,7 @@
 .nav-column {
     padding: 26px;
-    background: linear-gradient(180deg, #C4E3F4 0%, #E4F5FF 100%), #C4E3F4;
-    background-clip: padding-box, border-box;
-    border: 3px solid #C4C4C433;
+    background: linear-gradient(180deg, #5A4080 0%, #E4EBEF 100%);
+    background-clip: border-box;
     box-shadow: 0px 4px 20px 0px #70707066;
     border-radius: 40px;
     display: flex;
@@ -16,7 +15,7 @@
 
     &__exit {
         margin-top: auto;
-        color: #C4E3F4 !important;
+        color: #ADA7C3 !important;
         background-color: white;
 
         &:hover {
