@@ -4,6 +4,7 @@ import App from './app';
 import "./style/style.scss"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Welcome from './components/welcome';
+import MainClass from './app/main-class';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Welcome />
+      },
+      {
+        path: "main-class",
+        element: <MainClass />
       }
     ]
   },

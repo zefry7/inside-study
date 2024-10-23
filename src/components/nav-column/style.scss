@@ -18,5 +18,11 @@
         margin-top: auto;
         color: #C4E3F4 !important;
         background-color: white;
+
+        &:hover {
+            background-color: #e94444;
+            border-color: #e94444;
+            color: white !important;
+        }
     }
 }

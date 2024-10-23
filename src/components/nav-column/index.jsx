@@ -7,7 +7,7 @@ function NavColumn() {
     return (
         <div className="nav-column">
             <div className="nav-column__wrapper">
-                <Link to={"/class"} className="button-style">
+                <Link to={"/main-class"} className="button-style">
                     Класс
                 </Link>
                 <Dropdown />
@@ -15,9 +15,7 @@ function NavColumn() {
                     Настройки
                 </Link>
             </div>
-            <button className="button-style nav-column__exit">
-                Выход
-            </button>
+            <button className="button-style nav-column__exit">Выход</button>
         </div>
     );
 }
