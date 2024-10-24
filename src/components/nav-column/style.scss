@@ -1,5 +1,8 @@
+@import "../../style/adaptive";
+
 .nav-column {
     padding: 26px;
+    @include adap(width, 300);
     background: linear-gradient(180deg, #5A4080 0%, #E4EBEF 100%);
     background-clip: border-box;
     box-shadow: 0px 4px 20px 0px #70707066;

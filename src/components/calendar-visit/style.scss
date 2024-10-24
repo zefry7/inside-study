@@ -1,0 +1,108 @@
+.calendar-visit {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    &__calendar {
+        min-width: 550px;
+        width: 550px;
+    }
+
+    &__year {
+        margin-bottom: 20px;
+        font-size: 36px;
+        font-weight: 500;
+        color: white;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    &__item {
+        &-month {
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            font-size: 20px;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        &-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            width: 170px; 
+        }
+        &-day {
+            width: 20px;
+            height: 20px;
+            background-color: gray;
+            border-radius: 5px;
+            line-height: 22px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            &_visit {
+                background-color: #B2D078;
+            }
+
+            &_no-visit {
+                background-color: #F57781;
+            }
+        }
+        &-null {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__info {
+        height: max-content;
+        padding: 15px;
+        width: 100%;
+        border: 3px solid #D2D2D2;
+        border-radius: 20px;
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-year {
+            font-size: 30px;
+            font-weight: 500;
+            color: #848484;
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &-item {
+            padding: 6px 10px;
+            font-size: 20px;
+            background-color: #B2D078;
+            border-radius: 10px;
+            
+            &_no-visit {
+                background-color: #F57781;
+            }
+        }
+
+        &-subject {
+            color: white;
+            span {
+                display: inline-block;
+                width: 25px;
+            }
+        }
+
+        &-reason {
+            margin-top: 10px;
+            font-size: 16px;
+            color: white;
+        }
+    }
+}
