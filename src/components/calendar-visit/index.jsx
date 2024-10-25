@@ -63,7 +63,7 @@ function CalendarVisit({ valueFrom, valueTo }) {
     return (
         <div className="calendar-visit">
             <div className="calendar-visit__calendar">
-                <h3 className="calendar-visit__year">{year}</h3>
+                <h3 className="calendar-visit__year">{year} год</h3>
                 <div className="calendar-visit__list">
                     {allDay.map((month, i) => (
                         <div className="calendar-visit__item" key={i}>

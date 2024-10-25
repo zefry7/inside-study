@@ -12,9 +12,14 @@
         align-items: center;
     }
 
-    &__fio {
+    &__title {
         font-size: 32px;
         font-weight: 500;
+        color: #FFFFFF;
+    }
+
+    &__avg {
+        font-size: 24px;
         color: #FFFFFF;
     }
 

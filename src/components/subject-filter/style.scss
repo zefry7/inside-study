@@ -1,0 +1,66 @@
+.subject-filter {
+    width: 180px;
+    position: relative;
+
+    &_active {
+        .subject-filter__list {
+            display: block;
+        }
+
+        .subject-filter__button {
+            &::after {
+                top: 7px;
+                transform: rotateZ(0deg);
+            }
+        }
+    }
+
+    &__button {
+        padding: 6px 28px 6px;
+        border-radius: 20px;
+        font-size: 20px;
+        font-weight: 400; 
+        color: #715C92; 
+        background: #FFFFFF;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+        &::after {
+            content: "";
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            top: 9px;
+            right: 15px;
+            background: url(/public/img/triangle-purple.svg) center/ 100% no-repeat;
+            transform: rotateZ(180deg);
+        }
+    }
+
+    &__list {
+        padding: 5px;
+        display: none;
+        position: absolute;
+        z-index: 10;
+        top: 40px;
+        left: 0;
+        background: #FFFFFF;
+        border-radius: 20px;
+        width: 100%;
+    }
+
+    &__item {
+        padding: 5px 0;
+        font-size: 20px;
+        font-weight: 400; 
+        color: #715C92; 
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            border-radius: 20px;
+            background-color: rgb(226, 226, 226);
+        }
+    }
+}

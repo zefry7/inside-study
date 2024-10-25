@@ -19,7 +19,7 @@ function MainClass() {
     return (
         <>
             <TitlePage text={`Список учеников ${nameClass} класса`} />
-            <ListStudent list={data} />
+            <ListStudent list={data} type={"main-class"} link={"/main-class/123"}/>
         </>
     );
 }
