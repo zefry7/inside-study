@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TitlePage from "../../components/title-page";
 import ListStudent from "../../components/list-student";
 
@@ -15,6 +15,7 @@ const data = [
 const nameClass = "6Б";
 
 function MainClass() {
+
 
     return (
         <>

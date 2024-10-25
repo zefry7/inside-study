@@ -1,0 +1,42 @@
+.item-problem {
+    padding: 5px 10px 15px;
+    border-left: 4px solid rgb(184, 181, 181);
+    &__title {
+        margin-bottom: 15px;
+        font-size: 20px;
+        line-height: 130%;
+        font-weight: 500;       
+        color: white;
+    }
+
+    &__row {
+        display: flex;
+        gap: 17px;
+    }
+
+    &__button {
+        padding: 2px 9px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        background: rgba(255, 255, 255, 0.4);
+        color: white;
+        cursor: pointer;
+
+        &_active {
+            font-weight: 500;
+            color: #AA9DBE;
+            background: rgb(255, 255, 255);
+        }
+    }
+
+    &__window {
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: 400;
+        color: white;
+        background: rgba(255, 255, 255, 0.4);
+    }
+}

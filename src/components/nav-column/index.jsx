@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Dropdown from "../dropdown";
 
 function NavColumn() {
+
+    
     return (
         <div className="nav-column">
             <div className="nav-column__wrapper">

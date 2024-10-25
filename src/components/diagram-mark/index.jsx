@@ -5,14 +5,14 @@ import { ResponsiveBar } from "@nivo/bar";
 const data = [
     {
         item: "Ученик",
-        нормально: 3.7,
-        нормальноColor: "#ffca3a",
+        Удовлетворительно: 3.7,
+        УдовлетворительноColor: "#F8CA6D",
         count: 3.7,
     },
     {
         item: "Класс",
-        хорошо: 4.5,
-        хорошоColor: "#8ac926",
+        Хорошо: 4.5,
+        ХорошоColor: "#B2D078",
         count: 4.5,
     },
 ];
@@ -22,7 +22,7 @@ function DiagramMark() {
         <div className="diagram-mark">
             <ResponsiveBar
                 data={data}
-                keys={["хорошо", "нормально", "плохо"]}
+                keys={["Хорошо", "Удовлетворительно", "Плохо"]}
                 indexBy="item"
                 margin={{ top: 50, right: 50, bottom: 50, left: 60 }}
                 padding={0.3}
@@ -81,7 +81,6 @@ function DiagramMark() {
                 labelSkipWidth={5}
                 labelSkipHeight={12}
                 role="application"
-                barAriaLabel={(e) => e.id + ": " + e.formattedValue + " in country: " + e.indexValue}
             />
         </div>
     );

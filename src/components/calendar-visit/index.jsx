@@ -16,7 +16,7 @@ const data = {
 
 function CalendarVisit({ valueFrom, valueTo }) {
     const [allDay, setAllDay] = useState([]);
-    const [infoItem, setInfoItem] = useState();
+    const [infoItem, setInfoItem] = useState(null);
 
     useEffect(() => {
         const date = new Date("2024-01-01");
@@ -47,12 +47,12 @@ function CalendarVisit({ valueFrom, valueTo }) {
 
                 mass.push(month);
             } else {
-                date.setMonth(date.getMonth() + 1)
+                date.setMonth(date.getMonth() + 1);
             }
         }
 
         console.log(mass);
-        
+
         setAllDay(mass);
     }, [valueFrom, valueTo]);
 
@@ -100,67 +100,42 @@ function CalendarVisit({ valueFrom, valueTo }) {
                 </div>
             </div>
             <div className="calendar-visit__info">
-                <h3 className="calendar-visit__info-year">{infoItem?.full}</h3>
-                <div className="calendar-visit__info-list">
-                    <div className="calendar-visit__info-item">
-                        <p className="calendar-visit__info-subject">
-                            <span>1.</span> Рус. язык
+                {infoItem != null ? (
+                    <>
+                        <h3 className="calendar-visit__info-year">{infoItem?.full}</h3>
+                        <div className="calendar-visit__info-list">
+                            <div className="calendar-visit__info-item">
+                                <p className="calendar-visit__info-subject">
+                                    <span>1.</span> Рус. язык
+                                </p>
+                            </div>
+                            <div className="calendar-visit__info-item calendar-visit__info-item_no-visit">
+                                <p className="calendar-visit__info-subject">
+                                    <span>3.</span> Рус. язык
+                                </p>
+                                <p className="calendar-visit__info-reason">
+                                    <span>Причина: </span>
+                                    Прогул
+                                </p>
+                            </div>
+                            <div className="calendar-visit__info-item calendar-visit__info-item_sick">
+                                <p className="calendar-visit__info-subject">
+                                    <span>4.</span> Рус. язык
+                                </p>
+                                <p className="calendar-visit__info-reason">
+                                    <span>Причина: </span>
+                                    По болезни
+                                </p>
+                            </div>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <p className="calendar-visit__info-select">
+                            Выберите день
                         </p>
-                    </div>
-                    <div className="calendar-visit__info-item">
-                        <p className="calendar-visit__info-subject">
-                            <span>2.</span> Рус. язык
-                        </p>
-                    </div>
-                    <div className="calendar-visit__info-item calendar-visit__info-item_no-visit">
-                        <p className="calendar-visit__info-subject">
-                            <span>3.</span> Рус. язык
-                        </p>
-                        <p className="calendar-visit__info-reason">
-                            <span>Причина: </span>
-                            Прогул
-                        </p>
-                    </div>
-                    <div className="calendar-visit__info-item calendar-visit__info-item_no-visit">
-                        <p className="calendar-visit__info-subject">
-                            <span>4.</span> Рус. язык
-                        </p>
-                        <p className="calendar-visit__info-reason">
-                            <span>Причина: </span>
-                            По болезни
-                        </p>
-                    </div>
-                    <div className="calendar-visit__info-item">
-                        <p className="calendar-visit__info-subject">
-                            <span>5.</span> Рус. язык
-                        </p>
-                    </div>
-                    <div className="calendar-visit__info-item">
-                        <p className="calendar-visit__info-subject">
-                            <span>6.</span> Рус. язык
-                        </p>
-                    </div>
-                    <div className="calendar-visit__info-item">
-                        <p className="calendar-visit__info-subject">
-                            <span>7.</span> Рус. язык
-                        </p>
-                    </div>
-                    <div className="calendar-visit__info-item">
-                        <p className="calendar-visit__info-subject">
-                            <span>8.</span> Рус. язык
-                        </p>
-                    </div>
-                    <div className="calendar-visit__info-item">
-                        <p className="calendar-visit__info-subject">
-                            <span>9.</span> Рус. язык
-                        </p>
-                    </div>
-                    <div className="calendar-visit__info-item">
-                        <p className="calendar-visit__info-subject">
-                            <span>10.</span> Рус. язык
-                        </p>
-                    </div>
-                </div>
+                    </>
+                )}
             </div>
         </div>
     );

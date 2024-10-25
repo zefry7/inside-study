@@ -8,11 +8,14 @@ import DateFilter from "../../components/date-filter";
 import TitleSection from "../../components/title-section";
 import SubjectFilter from "../../components/subject-filter";
 import RowFilter from "../../components/row-filter";
+import ListProblem from "../../components/list-problem";
 
 function Student() {
     const { idStudent } = useParams();
     const [valueFrom, setValueFrom] = useState(0);
     const [valueTo, setValueTo] = useState(11);
+
+    
 
     return (
         <>
@@ -27,6 +30,7 @@ function Student() {
             <TitleSection text={"Посещаемость"} />
             <CalendarVisit valueFrom={valueFrom} valueTo={valueTo} />
             <TitleSection text={"Проблемы"} />
+            <ListProblem />
         </>
     );
 }

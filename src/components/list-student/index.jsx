@@ -15,7 +15,7 @@ function ListStudent({ list, link, type }) {
                         </>
                     )}
                     <Link to={link} className="button-style">
-                        Подробности
+                        Подробнee
                     </Link>
                 </div>
             ))}

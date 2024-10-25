@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import SingIn from "../components/sing-in";
 import Wrapper from "../components/wrapper";
 import WrapperContent from "../components/wrapper-content";
@@ -8,14 +8,18 @@ import NavColumm from "../components/nav-column";
 
 function App() {
     const navigate = useNavigate();
-    const [singIn, setSingIn] = useState(true);
+    const [singIn, setSingIn] = useState(false);
     const [data, setData] = useState("");
     const [errorSingIn, setErrorSignIn] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const store = sessionStorage.getItem("sing");
         if (store) {
             setSingIn(Boolean(store));
+        }
+        if(singIn == false) {
+            navigate("/")
         }
     }, []);
 
@@ -29,6 +33,14 @@ function App() {
             setErrorSignIn(true);
         }
     };
+
+    useEffect(() => {
+        if (singIn == true) {
+            document.getElementsByClassName("wrapper-content")[0].scrollTo({
+                top: 0,
+            });
+        }
+    }, [location]);
 
     return (
         <>

@@ -1,0 +1,72 @@
+.list-study-subj {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        margin-bottom: 15px;
+        &-wrapper {
+            padding: 7px 20px;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 20px;
+        }
+
+        &-row {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 56px;
+        }
+
+        &-fio {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 38px;
+            color: white;
+        }
+
+        &-avg {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 28px;
+            color: white;
+
+            span {
+                padding: 0px 5px;
+                border-radius: 10px;
+            }
+
+            &-5,
+            &-4 {
+                span {
+                    background-color: #B2D078;
+                }
+            }
+
+            &-3 {
+                span {
+                    background-color: #F8CA6D;
+                }
+            }
+
+            &-2 {
+                span {
+                    background-color: #F57781;
+                }
+            }
+        }
+
+        &-descr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.68);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            color: rgba(255, 255, 255, 0.68);
+            background-color: transparent;
+        }
+    }
+
+    & .list-mark {
+        margin-top: 10px;
+    }
+}
