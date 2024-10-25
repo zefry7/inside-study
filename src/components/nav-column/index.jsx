@@ -13,7 +13,7 @@ function NavColumn() {
                     Класс
                 </Link>
                 <Dropdown textButton={"Предметы"}/>
-                <Link to={"/"} className="button-style">
+                <Link to={"/setting"} className="button-style">
                     Настройки
                 </Link>
             </div>

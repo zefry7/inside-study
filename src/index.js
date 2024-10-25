@@ -8,6 +8,7 @@ import MainClass from './app/main-class';
 import Student from './app/student';
 import Subject from './app/subject';
 import StudyClass from './app/study-class';
+import Setting from './components/setting';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "subject/:idSubject/:idClass", 
         element: <StudyClass />
+      },
+      {
+        path: "setting",
+        element: <Setting />
       }
     ]
   },
