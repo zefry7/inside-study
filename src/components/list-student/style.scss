@@ -21,6 +21,34 @@
     &__avg {
         font-size: 24px;
         color: #FFFFFF;
+
+        span {
+            padding: 5px;
+            border-radius: 10px;
+            font-weight: 500;
+            display: inline-block;
+            text-align: center;
+            width: 50px;
+        }
+
+        &-5,
+        &-4 {
+            span {
+                background-color: #B2D078;
+            }
+        }
+
+        &-3 {
+            span {
+                background-color: #F8CA6D;
+            }
+        }
+
+        &-2 {
+            span {
+                background-color: #F57781;
+            }
+        }
     }
 
     & .button-style {

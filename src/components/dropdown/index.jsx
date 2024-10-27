@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./style.scss";
 import { Link } from "react-router-dom";
+import "./style.scss";
 
-function Dropdown({ textButton }) {
+function Dropdown({ textButton, disciplines }) {
     const [active, setActive] = useState(false);
 
     const handleClick = () => {
@@ -15,15 +15,11 @@ function Dropdown({ textButton }) {
                 {textButton}
             </button>
             <div className="dropdown__list">
-                <Link to={"/subject/123"} className="dropdown__item" onClick={() => handleClick()}>
-                    Предмет 1
-                </Link>
-                <Link to={"/subject/123"} className="dropdown__item" onClick={() => handleClick()}>
-                    Предмет 2
-                </Link>
-                <Link to={"/"} className="dropdown__item" onClick={() => handleClick()}>
-                    Предмет 3
-                </Link>
+                {disciplines.map((subject, i) => (
+                    <Link to={"/subject/" + subject?.id} className="dropdown__item" onClick={() => handleClick()} key={i}>
+                        {subject?.title}
+                    </Link>
+                ))}
             </div>
         </div>
     );

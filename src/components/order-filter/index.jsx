@@ -13,7 +13,7 @@ function OrderFilter({ sortFilter, setSortFilter}) {
                 Период: c
                 <select name="" id="" className="order-filter__select" value={sortFilter} onChange={(e) => setSortFilter(e.target.value)}>
                     {sortName.map((v, i) => (
-                        <option value={v}>{v}</option>
+                        <option value={v} key={i}>{v}</option>
                     ))}
                 </select>
             </p>

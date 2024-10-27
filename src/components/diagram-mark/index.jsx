@@ -1,23 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 import { ResponsiveBar } from "@nivo/bar";
 
-const data = [
-    {
-        item: "Ученик",
-        Удовлетворительно: 3.7,
-        УдовлетворительноColor: "#F8CA6D",
-        count: 3.7,
-    },
-    {
-        item: "Класс",
-        Хорошо: 4.5,
-        ХорошоColor: "#B2D078",
-        count: 4.5,
-    },
-];
 
-function DiagramMark() {
+function DiagramMark({ avgMark, avgClass }) {
+    const [data, setData] = useState([])
+
+
+    useEffect(() => {
+        const student = { item: "Ученик", count: avgMark}
+        const classSt = { item: "Класс", count: avgClass}
+        
+        if(avgMark >= 4) {
+            student["Хорошо"] = avgMark;
+            student["ХорошоColor"] = "#B2D078";
+        } else if(avgMark >= 3) {
+            student["Удовлетворительно"] = avgMark;
+            student["УдовлетворительноColor"] = "#F8CA6D";
+        } else {
+            student["Удовлетворительно"] = avgMark;
+            student["УдовлетворительноColor"] = "#F57781";
+        }
+
+        if(avgClass >= 4) {
+            classSt["Хорошо"] = avgClass;
+            classSt["ХорошоColor"] = "#B2D078";
+        } else if(avgClass >= 3) {
+            classSt["Удовлетворительно"] = avgClass;
+            classSt["УдовлетворительноColor"] = "#F8CA6D";
+        } else {
+            classSt["Удовлетворительно"] = avgClass;
+            classSt["УдовлетворительноColor"] = "#F57781";
+        }
+
+        setData([student, classSt])
+    }, [avgMark, avgClass])
+
     return (
         <div className="diagram-mark">
             <ResponsiveBar

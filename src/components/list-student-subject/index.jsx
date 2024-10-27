@@ -20,14 +20,14 @@ function ListStudySubject({ list }) {
                 <div className="list-study-subj__item" key={i}>
                     <div className="list-study-subj__item-wrapper">
                         <div className="list-study-subj__item-row">
-                            <p className="list-study-subj__item-fio">{v.fio}</p>
+                            <p className="list-study-subj__item-fio">{v.fullName}</p>
                             <p className={"list-study-subj__item-avg" + " list-study-subj__item-avg-" + Math.floor(v.avg)}>Средний балл: <span>{v.avg}</span></p>
                         </div>
                         <button className="list-study-subj__item-descr" onClick={() => handleOpenMark(i)}>
                             Подробное описание
                         </button>
                     </div>
-                    {numberOpen == i && <ListMark />}
+                    {numberOpen == i && <ListMark marks={v.marks}/>}
                 </div>
             ))}
         </div>

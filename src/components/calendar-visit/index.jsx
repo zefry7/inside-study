@@ -80,6 +80,7 @@ function CalendarVisit({ valueFrom, valueTo }) {
                                                         : " calendar-visit__item-day_no-visit")
                                                 }
                                                 key={j}
+                                                onClick={() => handleViewInfo(day)}
                                             >
                                                 {day.day}
                                             </div>
@@ -131,9 +132,7 @@ function CalendarVisit({ valueFrom, valueTo }) {
                     </>
                 ) : (
                     <>
-                        <p className="calendar-visit__info-select">
-                            Выберите день
-                        </p>
+                        <p className="calendar-visit__info-select">Выберите день</p>
                     </>
                 )}
             </div>

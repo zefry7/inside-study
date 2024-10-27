@@ -7,8 +7,11 @@
 
     &__img {
         margin-bottom: 60px;
+        width: 225px;
+        height: 201px;
         img {
-            transform: scale(1.5);
+            height: 100%;
+            width: 100%;
         }
     }
 

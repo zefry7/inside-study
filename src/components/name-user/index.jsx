@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.scss"
 
-function NameUser() {
+function NameUser({ fioUser }) {
 
     return <div className="name-user">
-        <p className="name-user__text">Васильев Антон Станиставович</p>
+        <p className="name-user__text">{fioUser}</p>
     </div>
 }
 

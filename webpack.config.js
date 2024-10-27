@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = (env) => {
 
     return {
-        mode: env.mode,
+        mode: env.mode || "production",
         entry: {
             bundle: "./src/index.js",
         },
@@ -17,8 +17,8 @@ module.exports = (env) => {
             clean: true,
         },
         devServer: {
-            historyApiFallback:{
-                index:'/'
+            historyApiFallback: {
+                index: '/'
             },
             port: "8080",
             open: true,
@@ -33,22 +33,37 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.(s[ac]|c)ss$/i,
-                    use: [{
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'postcss-loader',
-                    },
-                    {
-                        loader: 'sass-loader',
-                    }],
+                    exclude: /node_modules/,
+                    use: [
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                        },
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true,
+                            }
+                        }, {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                        {
+                            loader: 'resolve-url-loader',
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true,
+                            }
+                        }
+                    ]
                 },
                 {
                     test: /\.(jpg|png|webp)$/,
                     type: 'asset/resource',
+                    exclude: /node_modules/,
                     generator: {
                         filename: "./img/[name][ext]"
                     }
@@ -56,9 +71,22 @@ module.exports = (env) => {
                 {
                     test: /\.(eot|ttf|woff|woff2)$/,
                     type: 'asset/resource',
+                    exclude: /node_modules/,
                     generator: {
                         filename: "./fonts/[name][ext]"
                     }
+                },
+                {
+                    test: /\.(png|jpg|svg)$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[name].[ext]',
+                                outputPath: 'img/'
+                            }
+                        }
+                    ]
                 }
             ]
         },

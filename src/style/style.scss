@@ -32,3 +32,21 @@
         transform: scale(0.9);
     }
 }
+
+*::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-track {
+    margin: 20px 0;
+    width: 25px;
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    padding-right: 15px;
+    border: 5px solid transparent;
+    background-color: #FFFFFF;
+    width:10px;
+    border-radius: 10px;
+}

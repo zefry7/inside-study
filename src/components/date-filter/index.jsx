@@ -18,16 +18,16 @@ function DateFilter({ valueTo, setValueTo, valueFrom, setValueFrom }) {
                 Период: c
                 <select name="" id="" className="date-filter__select" value={valueFrom} onChange={(e) => handleChangeFrom(e)}>
                     {nameMonth.map((v, i) => (
-                        <option value={i}>{v}</option>
+                        <option value={i} key={i}>{v}</option>
                     ))}
                 </select>
                 по
                 <select name="" id="" className="date-filter__select" value={valueTo} onChange={(e) => setValueTo(e.target.value)}>
                     {nameMonth.map((v, i) =>
                         valueFrom <= i ? (
-                            <option value={i}>{v}</option>
+                            <option value={i} key={i}>{v}</option>
                         ) : (
-                            <option value={i} disabled>
+                            <option value={i} key={i} disabled>
                                 {v}
                             </option>
                         )

@@ -1,34 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TitlePage from "../../components/title-page";
-import { useParams } from "react-router";
+import { useOutletContext, useParams } from "react-router";
 import ListStudent from "../../components/list-student";
+import axios from "axios";
 
-const list = [
-    {
-        nameClass: "5Б",
-        avg: "4.5",
-    },
-    {
-        nameClass: "6A",
-        avg: "3.7",
-    },
-    {
-        nameClass: "9Г",
-        avg: "4.8",
-    },
-    {
-        nameClass: "4Б",
-        avg: "4.1",
-    },
-];
+const typeClass = ["A", "Б", "В", "Г"]
+
 
 function Subject() {
+    const data = useOutletContext()
     const { idSubject } = useParams();
+    const [list, setList] = useState([])
+
+    useEffect(() => {
+        const subject = data.disciplines.filter((v) => v.id == idSubject)[0]
+        
+
+        async function axiosRequest() {
+            const mass = []
+            for(let i = 0; i < subject.classes.length; ++i) {
+                const url = "http://localhost:80/api/avg_mark/" + idSubject + "/" + subject.classes[i].class_id
+
+                const response = await axios({
+                    method: "GET",
+                    url: url
+                })
+
+                const nameClass = subject.classes[i].class_title.split("-")[0] + typeClass[Number(subject.classes[i].class_title.split("-")[1]) - 1]
+
+                mass.push({ idClass: subject.classes[i].class_id, nameClass: nameClass, avgClass: (response.data/100.0).toFixed(1)})
+                
+            }                
+            setList([...mass])
+        }
+
+        axiosRequest();
+    }, []);
 
     return (
         <>
-            <TitlePage text={"Список классов по " + idSubject} />
-            <ListStudent type={"class"} list={list} link={"/subject/" + idSubject + "/1234"}/>
+            <TitlePage text={"Список классов"} />
+            <ListStudent type={"class"} list={list} link={"/subject/" + idSubject + "/"} />
         </>
     );
 }

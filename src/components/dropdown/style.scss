@@ -15,7 +15,7 @@
 
             &::after {
                 top: 16px;
-                background: url(/public/img/triangle-purple.svg) center/ 100% no-repeat;
+                background: url("./assets/triangle-purple.svg") center/ 100% no-repeat;
             }
         }
     }
@@ -25,6 +25,7 @@
         background-color: transparent;
         align-items: center;
         position: relative;
+        height: 52px;
         &::after {
             content: "";
             position: absolute;
@@ -33,7 +34,7 @@
             display: inline-block;
             height: 20px;
             width: 20px;
-            background: url(/public/img/triagle-white.svg) center/ 100% no-repeat;
+            background: url("./assets/triagle-white.svg") center/ 100% no-repeat;
         }
     }
     &__list {
